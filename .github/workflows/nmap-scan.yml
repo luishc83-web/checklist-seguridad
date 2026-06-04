@@ -20,7 +20,13 @@ jobs:
 
       - name: Ejecutar escaneo
         run: |
-          nmap -F scanme.nmap.org
+          mkdir -p evidencias
+          nmap -F scanme.nmap.org -oN evidencias/resultados-nmap.txt
+
+      - name: Mostrar resultados
+        run: |
+          cat evidencias/resultados-nmap.txt
 
       - name: Escaneo finalizado
-        run: echo "Escaneo terminado correctamente"
+        run: |
+          echo "Escaneo terminado correctamente"

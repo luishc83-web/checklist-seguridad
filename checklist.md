@@ -11,8 +11,8 @@
 - [ ] Enumerar servicios
 
 ## 3. Escaneo y Descubrimiento
-- [ ] Descubrir hosts activos
-- [ ] Identificar puertos abiertos
+- [ x] Descubrir hosts activos
+- [ x] Identificar puertos abiertos
 - [ ] Detectar versiones y sistemas operativos
 
 ## 4. Análisis de Vulnerabilidades

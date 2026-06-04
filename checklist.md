@@ -38,3 +38,6 @@
 - [ ] Documentar hallazgos
 - [ ] Proponer recomendaciones
 - [ ] Elaborar reporte final
+
+## 9. Automatización
+- [ ] Probar GitHub Actions

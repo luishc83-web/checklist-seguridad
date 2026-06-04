@@ -27,6 +27,21 @@ jobs:
         run: |
           cat evidencias/resultados-nmap.txt
 
-      - name: Escaneo finalizado
+      - name: Configurar Git
         run: |
-          echo "Escaneo terminado correctamente"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Guardar evidencias
+        run: |
+          git add evidencias/resultados-nmap.txt
+          git commit -m "Actualizar resultados Nmap" || echo "Sin cambios"
+
+      - name: Subir cambios
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
+      - name: Escaneo finalizado
+        run: echo "Escaneo terminado correctamente"

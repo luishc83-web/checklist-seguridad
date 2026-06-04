@@ -1,0 +1,26 @@
+name: Escaneo Nmap
+
+on:
+  push:
+    paths:
+      - "targets.txt"
+
+jobs:
+  nmap-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Nmap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nmap
+
+      - name: Ejecutar escaneo
+        run: |
+          nmap -F scanme.nmap.org
+
+      - name: Escaneo finalizado
+        run: echo "Escaneo terminado correctamente"
